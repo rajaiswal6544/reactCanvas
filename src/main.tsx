@@ -5,26 +5,25 @@ import { AppProviders } from "./app/providers";
 import "./index.css";
 
 async function enableMocking() {
-  if (import.meta.env.PROD) {
-    return;
-  }
-
   const { worker } = await import("./mocks/browser");
   return worker.start({
     onUnhandledRequest: "bypass",
   });
 }
 
+function renderApp() {
+  ReactDOM.createRoot(document.getElementById("root")!).render(
+    <React.StrictMode>
+      <AppProviders>
+        <App />
+      </AppProviders>
+    </React.StrictMode>,
+  );
+}
+
 enableMocking()
-  .then(() => {
-    ReactDOM.createRoot(document.getElementById("root")!).render(
-      <React.StrictMode>
-        <AppProviders>
-          <App />
-        </AppProviders>
-      </React.StrictMode>,
-    );
-  })
+  .then(renderApp)
   .catch((error: unknown) => {
     console.error("Failed to start mock service worker", error);
+    renderApp();
   });
