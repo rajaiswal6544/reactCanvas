@@ -1,0 +1,143 @@
+@import "@xyflow/react/dist/style.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 24% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 192 84% 36%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 22% 88%;
+    --input: 214 22% 88%;
+    --ring: 192 84% 36%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+
+.react-flow__node-service,
+.react-flow__node-database {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.react-flow__controls {
+  @apply overflow-hidden rounded-md border border-white/10 bg-black shadow-2xl;
+}
+
+.react-flow__controls-button {
+  @apply border-white/10 bg-black text-white hover:bg-white/10;
+}
+
+.react-flow__edge-path {
+  filter: drop-shadow(0 0 4px rgba(45, 212, 111, 0.25));
+}
+
+.theme-light {
+  color: #0f172a;
+  background: #eef3f8;
+}
+
+.theme-light .bg-\[\#111315\] {
+  background-color: #eef3f8 !important;
+}
+
+.theme-light .bg-black,
+.theme-light .bg-\[\#171719\] {
+  background-color: #ffffff !important;
+}
+
+.theme-light .bg-\[\#242424\] {
+  background-color: #f1f5f9 !important;
+}
+
+.theme-light .bg-\[\#13213a\],
+.theme-light .bg-\[\#111827\] {
+  background-color: #e8eef6 !important;
+}
+
+.theme-light .text-white,
+.theme-light .text-white\/80,
+.theme-light .text-white\/70,
+.theme-light .text-white\/60 {
+  color: #0f172a !important;
+}
+
+.theme-light .text-white\/50,
+.theme-light .text-white\/45,
+.theme-light .text-white\/40,
+.theme-light .text-white\/35,
+.theme-light .text-white\/30 {
+  color: rgba(15, 23, 42, 0.55) !important;
+}
+
+.theme-light .border-white\/15,
+.theme-light .border-white\/10,
+.theme-light .border-white\/5 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+.theme-light .bg-white\/15,
+.theme-light .bg-white\/10,
+.theme-light .bg-white\/5 {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.theme-light .hover\:bg-white\/20:hover,
+.theme-light .hover\:bg-white\/10:hover,
+.theme-light .hover\:bg-white\/5:hover {
+  background-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+.theme-light .shadow-2xl {
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14) !important;
+}
+
+.theme-light .react-flow__controls {
+  border-color: rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+}
+
+.theme-light .react-flow__controls-button {
+  border-color: rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.theme-light .react-flow__edge-path {
+  filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.22));
+}
+
+.theme-light .bg-\[\#6558f5\],
+.theme-light .bg-\[\#3464ff\],
+.theme-light .bg-\[\#2857ef\] {
+  color: #ffffff !important;
+}
+
+.theme-light .bg-gradient-to-br {
+  color: #ffffff !important;
+}
